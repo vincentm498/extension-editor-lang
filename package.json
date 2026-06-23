@@ -2,7 +2,7 @@
   "name": "editor-lang",
   "displayName": "Editor Lang",
   "description": "Syntax highlighting, formatting, autocomplete and snippets for .editor template files",
-  "version": "0.1.9",
+  "version": "0.1.11",
   "publisher": "InnovData",
   "engines": {
     "vscode": "^1.74.0"
