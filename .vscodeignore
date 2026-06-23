@@ -1,0 +1,4 @@
+*.vsix
+.git
+.gitignore
+release.sh

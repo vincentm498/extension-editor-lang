@@ -1,0 +1,76 @@
+{
+  "name": "Editor Lang",
+  "scopeName": "text.html.editor-lang",
+  "fileTypes": ["editor"],
+  "patterns": [
+    { "include": "#template-tag-simple" },
+    { "include": "#template-tag-function" },
+    { "include": "#ejs-for-tag" },
+    { "include": "text.html.basic" }
+  ],
+  "repository": {
+    "template-tag-simple": {
+      "match": "\\[%\\s*(dropzone|id)\\s*%\\]",
+      "name": "meta.template.block.editor-lang",
+      "captures": {
+        "0": { "name": "meta.template.block.editor-lang" },
+        "1": { "name": "keyword.control.editor-lang" }
+      }
+    },
+    "template-tag-function": {
+      "begin": "(\\[%\\s*)(input|textarea|select|file|image|color|texteditor|radio|var)(\\s*)",
+      "end": "(\\s*%\\])",
+      "name": "meta.template.function.editor-lang",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.template.begin.editor-lang" },
+        "2": { "name": "entity.name.function.editor-lang" }
+      },
+      "endCaptures": {
+        "1": { "name": "punctuation.definition.template.end.editor-lang" }
+      },
+      "patterns": [
+        {
+          "name": "string.quoted.double.editor-lang",
+          "match": "\"[^\"]*\""
+        },
+        {
+          "name": "string.quoted.single.editor-lang",
+          "match": "'[^']*'"
+        },
+        {
+          "name": "constant.numeric.editor-lang",
+          "match": "\\b[0-9]+\\b"
+        },
+        {
+          "name": "constant.language.editor-lang",
+          "match": "\\b(true|false|null)\\b"
+        },
+        {
+          "name": "support.type.property-name.editor-lang",
+          "match": "\"(name|label|defaultValue|options|value|classTagPicture|classTagImage|formats|size|extension|breakpoint|url|max|min|buttonlabel|valuevisible)\"(?=\\s*:)"
+        },
+        {
+          "name": "punctuation.separator.editor-lang",
+          "match": "[,:\\[\\]{}()]"
+        }
+      ]
+    },
+    "ejs-for-tag": {
+      "begin": "(<)(ejs-for)\\b",
+      "end": "(<\\/)(ejs-for)(>)",
+      "name": "meta.ejs-for.editor-lang",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.html" },
+        "2": { "name": "entity.name.tag.custom.editor-lang" }
+      },
+      "endCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.html" },
+        "2": { "name": "entity.name.tag.custom.editor-lang" },
+        "3": { "name": "punctuation.definition.tag.end.html" }
+      },
+      "patterns": [
+        { "include": "text.html.basic" }
+      ]
+    }
+  }
+}

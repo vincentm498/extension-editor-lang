@@ -1,0 +1,97 @@
+{
+  "Dropzone": {
+    "prefix": "dropzone",
+    "body": "[% dropzone %]",
+    "description": "Ajoute une zone pour insérer des blocs enfants"
+  },
+  "Id": {
+    "prefix": "id",
+    "body": "[% id %]",
+    "description": "Référence à l'id du bloc"
+  },
+  "Input": {
+    "prefix": "input",
+    "body": "[% input({\"name\": \"${1:name}\", \"label\": \"${2:Label}\", \"defaultValue\": \"${3:Valeur par défaut}\"}) %]",
+    "description": "Champ texte modifiable"
+  },
+  "Textarea": {
+    "prefix": "textarea",
+    "body": "[% textarea({\"name\": \"${1:name}\", \"label\": \"${2:Label}\", \"defaultValue\": \"${3:Valeur par défaut}\"}) %]",
+    "description": "Zone de texte modifiable"
+  },
+  "Select": {
+    "prefix": "select",
+    "body": [
+      "[% select({",
+      "\t\"name\": \"${1:name}\",",
+      "\t\"label\": \"${2:Label}\",",
+      "\t\"defaultValue\": \"${3:value1}\",",
+      "\t\"options\": [",
+      "\t\t{\"label\": \"${4:Option 1}\", \"value\": \"${3:value1}\"},",
+      "\t\t{\"label\": \"${5:Option 2}\", \"value\": \"${6:value2}\"}",
+      "\t]",
+      "}) %]"
+    ],
+    "description": "Liste déroulante"
+  },
+  "Select simple": {
+    "prefix": "select-simple",
+    "body": [
+      "[% select({",
+      "\t\"name\": \"${1:name}\",",
+      "\t\"label\": \"${2:Label}\",",
+      "\t\"defaultValue\": \"${3:option1}\",",
+      "\t\"options\": [",
+      "\t\t\"${3:option1}\",",
+      "\t\t\"${4:option2}\"",
+      "\t]",
+      "}) %]"
+    ],
+    "description": "Liste déroulante (valeurs simples)"
+  },
+  "Radio": {
+    "prefix": "radio",
+    "body": [
+      "[% radio({",
+      "\t\"name\": \"${1:name}\",",
+      "\t\"label\": \"${2:Label}\",",
+      "\t\"defaultValue\": \"${3:value1}\",",
+      "\t\"options\": [",
+      "\t\t{\"label\": \"${4:Option 1}\", \"value\": \"${3:value1}\"},",
+      "\t\t{\"label\": \"${5:Option 2}\", \"value\": \"${6:value2}\"}",
+      "\t]",
+      "}) %]"
+    ],
+    "description": "Boutons radio"
+  },
+  "Color": {
+    "prefix": "color",
+    "body": "[% color({\"name\": \"${1:name}\", \"label\": \"${2:Label}\", \"defaultValue\": \"${3:#000000}\"}) %]",
+    "description": "Sélecteur de couleur"
+  },
+  "TextEditor": {
+    "prefix": "texteditor",
+    "body": "[% texteditor({\"name\": \"${1:name}\", \"label\": \"${2:Label}\", \"defaultValue\": \"${3:Texte par défaut}\"}) %]",
+    "description": "Éditeur de texte riche"
+  },
+  "File": {
+    "prefix": "file",
+    "body": "[% file({\"name\": \"${1:name}\", \"label\": \"${2:Label}\", \"defaultValue\": \"${3:https://url}\"}) %]",
+    "description": "Lien vers un fichier"
+  },
+  "Image": {
+    "prefix": "image",
+    "body": "[% image({\n\t\"name\": \"${1:urlimg}\",\n\t\"defaultValue\": [{\"url\": \"${2:https://via.placeholder.com/300}\", \"size\": \"original\"}],\n\t\"classTagPicture\": \"${3:}\",\n\t\"classTagImage\": \"${4:}\",\n\t\"formats\": [\n\t\t{\"size\": \"lg\", \"extension\": \"${5:png}\", \"breakpoint\": \"${6:750w}\"}\n\t]\n}) %]",
+    "description": "Image responsive"
+  },
+  "Var": {
+    "prefix": "var",
+    "body": "[% var({\"name\": \"${1:name}\", \"defaultValue\": \"${2:valeur}\"}) %]",
+    "description": "Référence à une variable existante"
+  },
+  "EJS For": {
+    "prefix": "ejs-for",
+    "body": "<ejs-for\n\tname=\"${1:loop}\"\n\tlabel=\"${2:Éléments}\"\n\tmax=\"${3:10}\"\n\tmin=\"${4:1}\"\n\tbuttonlabel=\"${5:Ajouter}\"\n\tvaluevisible=\"${6:}\"\n>\n\t${0}\n</ejs-for>",
+    "description": "Boucle for pour répéter des blocs"
+  }
+}

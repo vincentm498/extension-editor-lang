@@ -1,0 +1,63 @@
+{
+  "name": "editor-lang",
+  "displayName": "Editor Lang",
+  "description": "Syntax highlighting, formatting, autocomplete and snippets for .editor template files",
+  "version": "0.1.9",
+  "publisher": "InnovData",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "editor-lang",
+        "aliases": [
+          "Editor Lang",
+          "editor-lang"
+        ],
+        "extensions": [
+          ".editor"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "editor-lang",
+        "scopeName": "text.html.editor-lang",
+        "path": "./syntaxes/editor.tmLanguage.json",
+        "embeddedLanguages": {
+          "text.html.basic": "html"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "editor-lang",
+        "path": "./snippets/editor.json"
+      }
+    ]
+  },
+  "activationEvents": [
+    "onLanguage:editor-lang"
+  ],
+  "configurationDefaults": {
+    "[editor-lang]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "InnovData.editor-lang",
+      "html.validate.scripts": false,
+      "html.validate.styles": false,
+      "css.validate": false
+    }
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "editor",
+    "template",
+    "syntax",
+    "highlighting"
+  ]
+}
